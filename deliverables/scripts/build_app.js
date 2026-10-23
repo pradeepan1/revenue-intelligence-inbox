@@ -3320,9 +3320,11 @@ const appHtml = `<!DOCTYPE html>
 // Write to deliverables/app/index.html
 fs.writeFileSync(path.resolve(__dirname, '../app/index.html'), appHtml, 'utf8');
 
-// Also update root app.html
+// Also update root app.html and root index.html (for Vercel deployment)
 fs.writeFileSync(path.resolve(__dirname, '../../app.html'), appHtml, 'utf8');
+fs.writeFileSync(path.resolve(__dirname, '../../index.html'), appHtml, 'utf8');
 
 console.log('Successfully compiled clean analytics dashboard Volopay Revenue Intelligence UI:');
 console.log('1. deliverables/app/index.html');
 console.log('2. app.html (root)');
+console.log('3. index.html (root - for Vercel deployment)');
